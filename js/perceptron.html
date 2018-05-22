@@ -1,0 +1,54 @@
+<script>
+var eta=0.7;//learning rate
+var w1=0;
+var w2=0;
+var b1=0;
+
+// The Neural
+// neural(input1,input2,desire output)
+
+function  neural(x1,x2,d){
+	//forward path
+	var n=w1*x1+w2*x2+b1;	
+	var o =1/(1+Math.exp(-n));
+	//backward path
+	w1+=eta*(d-o)*o*(1-o)*x1;
+	w2+=eta*(d-o)*o*(1-o)*x2;
+	b1+=eta*(d-o)*o*(1-o)* 1;	
+	return (d-o);
+};
+
+// learn AND
+// this will converge
+function  neuralAND(){
+	var	 x=Math.floor((Math.random()%2));
+	var	 y=Math.floor((Math.random()%2));
+	var  z=x&&y;
+	document.write(neural(x,y,z)+"<br>");
+};
+
+// learn OR
+// this will converge
+function  neuralOR(){
+	var	 x=Math.floor((Math.random()%2));
+	var	 y=Math.floor((Math.random()%2));
+	var  z=x||y;
+	document.write(neural(x,y,z)+"<br>");
+};
+
+// learn XOR
+// this will not converge
+function  neuralXOR(){
+	var	 x=Math.floor((Math.random()%2));
+	var	 y=Math.floor((Math.random()%2));
+	var  z=x ^ y;
+	document.write(neural(x,y,z)+"<br>");
+};
+
+window.onload=function(){
+
+	for(var i=0;i<1000;i++){
+		neuralOR();
+	}
+};
+</script>
