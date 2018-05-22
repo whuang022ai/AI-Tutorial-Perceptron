@@ -8,5 +8,6 @@ This is a hard coding version of Sigmoid Perceptron. It is just for "Hello World
 |---|---|
 | C++ 98 |[c++](./c++)|
 | JavaScript |[js](./js)|
+| Python |[python](./python)|
 
 
