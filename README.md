@@ -7,6 +7,7 @@ This is a hard coding version of Sigmoid Perceptron. It is just for "Hello World
 | Language | Folder |
 |---|---|
 | C++ 98 |[c++](./c++)|
+| Java |[java](./java)|
 | JavaScript |[js](./js)|
 | Python |[python](./python)|
 
